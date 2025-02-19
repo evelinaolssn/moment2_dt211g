@@ -32,16 +32,24 @@ main {
 #search-input {
     padding: 10px;
     margin: 5px;
-    width: 40%;
+    width: 50%;
 }
 
 /*Style for course table*/
 table {
-    width: 40%;
+    width: 50%;
+   
 }
 
 table, tr, th {
     padding: 10px;
+}
+
+th, td {
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
 }
 
 /*Styling for the footer section*/

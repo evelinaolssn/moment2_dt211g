@@ -10,6 +10,21 @@ async function fetchCourses() {
         const data = await response.json();
         console.log(data);
 
+        ///Collecting tbody element from HTML and clears previous content
+        const tableBodyEl = document.querySelector("#table-body");
+        tableBodyEl.innerHTML = "";
+        
+        //Funktion to collect data from API for each cell in course table
+         data.forEach(course => {
+            const tableRowEl = document.createElement("tr"); 
+            tableRowEl.innerHTML = `
+            <td>${course.code}</td>
+            <td>${course.coursename}</td>
+            <td>${course.progression}</td>
+            `;
+            tableBodyEl.appendChild(tableRowEl);
+         });
+
         //Error message
     } catch (error) {
         console.log("Error", error);
