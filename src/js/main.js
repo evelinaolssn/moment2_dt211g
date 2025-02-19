@@ -5,7 +5,11 @@ async function fetchCourses() {
     try {
         //Request to API to collect courses
         const response = await fetch("https://webbutveckling.miun.se/files/ramschema_ht24.json");
-
+        //Error message
+        if(!response.ok) {
+            throw new Error("Fel vid API-anrop...");
+        };
+        
         //Convert to JSON
         const data = await response.json();
         console.log(data);
