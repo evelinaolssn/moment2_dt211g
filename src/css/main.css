@@ -52,6 +52,12 @@ th, td {
     border-radius: 5px;
 }
 
+/*Style for clickable text*/
+th {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 /*Styling for the footer section*/
 footer {
     padding: 10px;

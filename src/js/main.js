@@ -9,6 +9,11 @@ window.onload = () => {
 
     //Event listener for search input field
     document.querySelector("#search-input").addEventListener("input", filterData);
+
+    //Event listener for sorted data 
+    document.querySelector("#sort-by-code").addEventListener("click", () => sortData("code"));
+    document.querySelector("#sort-by-name").addEventListener("click", () => sortData("coursename"));
+    document.querySelector("#sort-by-progression").addEventListener("click", () => sortData("progression"));
 }
 
 //Fetch function for collecting data from API
@@ -64,5 +69,16 @@ function filterData() {
 
     //Updated table with filtered courses 
     courseTable(filteredData);
+};
+
+//Function to sort data based on users 
+function sortData(option) {
+
+    const sortedData = [...coursesData].sort((a, b) => {
+        return a[option] > b[option] ? 1 : -1;
+    });
+
+    //Updated table with sorted courses 
+    courseTable(sortedData);
 };
 
